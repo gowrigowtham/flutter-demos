@@ -59,7 +59,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
         },
       ),
     );*/
-    /*return Expanded(
+    return Expanded(
       child: ListView.separated(
           itemBuilder: (context, position) {
             return Card(
@@ -88,53 +88,6 @@ class _ListViewWidgetState extends State<ListViewWidget> {
             );*/
           },
           itemCount: 20),
-    );*/
-    return Expanded(
-      child: CustomScrollView(
-        slivers: [
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                for (var i = 0; i < 30; i++)
-                  ListTile(
-                    title: Text('List Items: $i'),
-                  ),
-              ],
-            ),
-          ),
-          SliverList(
-              delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "Item $index",
-                  style: const TextStyle(fontSize: 25),
-                ),
-              );
-            },
-            childCount: 20,
-          )),
-          SliverGrid(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return Container(
-                  height: 20,
-                  color: Colors.amber[300],
-                  alignment: Alignment.center,
-                  child: Text(index.toString()),
-                );
-              },
-              childCount: 20,
-            ),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                mainAxisSpacing: 5,
-                crossAxisSpacing: 5,
-                childAspectRatio: 2.0),
-          ),
-        ],
-      ),
     );
   }
 }

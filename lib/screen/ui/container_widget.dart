@@ -42,6 +42,8 @@ class ContainerWidget extends StatelessWidget {
           //BoxShadow
         ],
         gradient: const LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
           colors: [Colors.white, Colors.orange],
         ),
         shape: BoxShape.rectangle,

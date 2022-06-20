@@ -22,10 +22,12 @@ class _RowWidgetState extends State<RowWidget> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,
-          children: [
+          textDirection: TextDirection.ltr,
+          // verticalDirection: VerticalDirection.down,
+          children: const [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   "Nature places",
                   style: TextStyle(

@@ -17,6 +17,8 @@ class _StackWidgetState extends State<StackWidget> {
         print("Image clicked");
       },
       child: Stack(
+        alignment: Alignment.center,
+        fit: StackFit.loose,
         clipBehavior: Clip.none,
         children: [
           Container(
