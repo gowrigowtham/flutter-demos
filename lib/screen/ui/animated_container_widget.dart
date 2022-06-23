@@ -21,7 +21,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
     return Center(
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           AnimatedContainer(
@@ -31,14 +31,14 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
               color: _color,
               borderRadius: _borderRadius,
             ),
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
             curve: Curves.fastOutSlowIn,
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           FloatingActionButton(
-            child: Icon(Icons.play_arrow),
+            child: const Icon(Icons.play_arrow),
             onPressed: () {
               setState(() {
                 final random = Random();

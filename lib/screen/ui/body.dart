@@ -41,7 +41,7 @@ class _BodyState extends State<Body> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           /* ContainerWidget(),
-          AnimatedContainerWidget(),
+           AnimatedContainerWidget(),
           RowWidget(),
           ColumnWidget(),
           StackWidget(),
@@ -62,8 +62,8 @@ class _BodyState extends State<Body> {
           InteractiveViewerWidget()
           MediaQueryWidget()
           SafeAreaWidget()
-          TextWidget(),*/
-          RichTextWidget()
+          TextWidget(),
+          RichTextWidget()*/
         ],
       ),
     );

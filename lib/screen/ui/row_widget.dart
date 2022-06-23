@@ -13,7 +13,7 @@ class _RowWidgetState extends State<RowWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 50),
+      margin: const EdgeInsets.only(top: 50),
       alignment: Alignment.center,
       color: Colors.deepPurple,
       child: Padding(
@@ -33,7 +33,7 @@ class _RowWidgetState extends State<RowWidget> {
                   style: TextStyle(
                       decoration: TextDecoration.none,
                       fontSize: 20,
-                      fontFamily: 'Raleway',
+                      fontFamily: 'Raceway',
                       fontWeight: FontWeight.w700,
                       color: Colors.white),
                   textDirection: TextDirection.ltr,

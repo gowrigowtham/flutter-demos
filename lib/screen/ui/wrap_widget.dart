@@ -23,12 +23,12 @@ class _WrapWidgetState extends State<WrapWidget> {
           verticalDirection: VerticalDirection.down,
           spacing: 20,
           runSpacing: 30,
-          children: const [
-            MyWidget(),
-            MyWidget(),
-            MyWidget(),
-            MyWidget(),
-            MyWidget(),
+          children: [
+            MyWidget('A'),
+            MyWidget('B'),
+            MyWidget('C'),
+            MyWidget('D'),
+            MyWidget('E'),
           ],
         ),
       ),
@@ -37,16 +37,21 @@ class _WrapWidgetState extends State<WrapWidget> {
 }
 
 class MyWidget extends StatelessWidget {
-  const MyWidget({Key? key}) : super(key: key);
-
+  MyWidget(this.value, {Key? key}) : super(key: key);
+  String value;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(10.0),
       height: 80,
       width: 80,
       color: Colors.green,
-      child: Center(child: Text('Hi')),
+      child: Center(
+          child: Text(
+        value,
+        style: const TextStyle(
+            fontSize: 25, color: Colors.red, fontWeight: FontWeight.w700),
+      )),
     );
   }
 }

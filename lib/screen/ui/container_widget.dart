@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+const WHITE = "white";
+const PRIMARY = "primary";
+const Map<String, Color> myColors = {
+  PRIMARY: Color.fromRGBO(255, 25, 64, 1),
+  WHITE: Colors.white
+};
+
 class ContainerWidget extends StatelessWidget {
   const ContainerWidget({Key? key}) : super(key: key);
 
@@ -8,9 +15,9 @@ class ContainerWidget extends StatelessWidget {
     return Container(
       width: 400,
       height: 300,
-      margin: const EdgeInsets.all(0.0),
+      margin: const EdgeInsets.all(10.0),
       alignment: Alignment.center,
-      transform: Matrix4.rotationZ(0.1),
+      transform: Matrix4.rotationZ(0.3),
       decoration: BoxDecoration(
         color: const Color(0xff7c94b6),
         image: const DecorationImage(
@@ -20,15 +27,15 @@ class ContainerWidget extends StatelessWidget {
         ),
         border: Border.all(
           color: Colors.black,
-          width: 8,
+          width: 10,
         ),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(15),
         boxShadow: const [
           BoxShadow(
             color: Colors.black,
             offset: Offset(
-              5.0,
-              5.0,
+              4.0,
+              3.0,
             ),
             blurRadius: 10.0,
             spreadRadius: 2.0,

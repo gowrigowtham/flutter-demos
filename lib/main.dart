@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:googlemapdemo/database/room/floor/dao/note_dao.dart';
+import 'package:googlemapdemo/database/room/floor/db/note_db.dart';
+import 'package:googlemapdemo/database/room/floor/screen/floor_database_screen.dart';
+import 'package:googlemapdemo/screen/flutter_widgets.dart';
 import 'package:googlemapdemo/screen/google_map_screen.dart';
 import 'package:googlemapdemo/screen/gps_location.dart';
 import 'package:googlemapdemo/screen/home_page.dart';
@@ -14,9 +19,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      // home: FlutterWidgets(),
+      home: FutureBuilder<NoteDatabase>(
+        future: $FloorNoteDatabase.databaseBuilder('note.db').build(),
+        builder: (context, data) {
+          if (data.hasData) {
+            Get.put(data.data!.noteDao);
+            return FloorDatabase();
+          } else if (data.hasError) {
+            return Text('Error');
+          } else {
+            return Text('Loading');
+          }
+        },
+      ),
     );
   }
 }
