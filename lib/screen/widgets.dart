@@ -12,9 +12,9 @@ class _WidgetDemoState extends State<WidgetDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Widgets Demo'),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Widgets Demo'),
+      // ),
       body: Body(),
     );
   }

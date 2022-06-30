@@ -35,12 +35,10 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          /* ContainerWidget(),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        /* ContainerWidget(),
            AnimatedContainerWidget(),
           RowWidget(),
           ColumnWidget(),
@@ -51,9 +49,9 @@ class _BodyState extends State<Body> {
           FittedBoxWidget(),
           WrapWidget(),
           ExpansionWidget(),
-          VisibilityWidget(),
-          PageViewWidget(),
-          SliverWidget(),
+          VisibilityWidget(),*/
+        PageViewWidget(),
+        /* SliverWidget(),
           WillpopScopeWidget(),
           FutureBuilderWidget(),
           // SpreadOperatorWidget()
@@ -64,8 +62,7 @@ class _BodyState extends State<Body> {
           SafeAreaWidget()
           TextWidget(),
           RichTextWidget()*/
-        ],
-      ),
+      ],
     );
   }
 }

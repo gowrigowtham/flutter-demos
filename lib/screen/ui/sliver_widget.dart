@@ -13,7 +13,7 @@ class _SliverWidgetState extends State<SliverWidget> {
     return Expanded(
       child: CustomScrollView(
         slivers: [
-          const SliverAppBar(
+          /*   const SliverAppBar(
             pinned: true,
             floating: false,
             snap: false,
@@ -23,8 +23,8 @@ class _SliverWidgetState extends State<SliverWidget> {
               title: Text('MyApp'),
               centerTitle: true,
             ),
-          ),
-          SliverList(
+          ),*/
+          /* SliverList(
             delegate: SliverChildListDelegate(
               [
                 for (var i = 0; i < 30; i++)
@@ -33,23 +33,23 @@ class _SliverWidgetState extends State<SliverWidget> {
                   ),
               ],
             ),
-          ),
-          SliverList(
+          ),*/
+          /* SliverList(
               delegate: SliverChildBuilderDelegate(
-                    (BuildContext context, int index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Item $index",
-                      style: const TextStyle(fontSize: 25),
-                    ),
-                  );
-                },
-                childCount: 20,
-              )),
+            (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Item $index",
+                  style: const TextStyle(fontSize: 25),
+                ),
+              );
+            },
+            childCount: 20,
+          )),*/
           SliverGrid(
             delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
+              (BuildContext context, int index) {
                 return Container(
                   height: 20,
                   color: Colors.amber[300],
@@ -60,10 +60,11 @@ class _SliverWidgetState extends State<SliverWidget> {
               childCount: 20,
             ),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
+                mainAxisExtent: 180.0,
+                crossAxisCount: 2,
                 mainAxisSpacing: 5,
                 crossAxisSpacing: 5,
-                childAspectRatio: 2.0),
+                childAspectRatio: 0.9),
           ),
         ],
       ),

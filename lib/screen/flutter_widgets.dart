@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 const WHITE = "white";
@@ -88,7 +89,56 @@ class _BodyState extends State<Body> {
         ),
         Expanded(
           flex: 3,
-          child: Container(),
+          child: Container(
+            margin: EdgeInsets.only(right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SizedBox(
+                  width: 150,
+                  // child: ElevatedButton(
+                  //     onPressed: () {},
+                  //     // style: ButtonStyle(
+                  //     //   backgroundColor: MaterialStateProperty.all(Colors.blue),
+                  //     // ),
+                  //     style: ElevatedButton.styleFrom(
+                  //         onPrimary: Colors.white,
+                  //         shadowColor: Colors.red,
+                  //         elevation: 20,
+                  //         shape: const BeveledRectangleBorder(
+                  //           borderRadius: BorderRadius.all(
+                  //             Radius.circular(5),
+                  //           ),
+                  //         )),
+                  //     child: const Padding(
+                  //       padding: EdgeInsets.all(8.0),
+                  //       child: Text(
+                  //         'Buy 120',
+                  //         style: TextStyle(color: Colors.white, fontSize: 20),
+                  //       ),
+                  //     )),
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                        primary: myColors[WHITE],
+                        backgroundColor: myColors[WHITE],
+                        shadowColor: Colors.brown,
+                        elevation: 10,
+                        side: const BorderSide(
+                            color: Colors.pinkAccent, width: 3)),
+                    onPressed: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Buy \$120',
+                        style:
+                            TextStyle(color: myColors[PRIMARY], fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         )
       ],
     );
