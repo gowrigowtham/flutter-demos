@@ -18,11 +18,21 @@ class _GalleryPhotosState extends State<GalleryPhotos> {
   final TextEditingController _controller = TextEditingController();
   String searchQuery = "";
   final ScrollController _scrollController = ScrollController();
-  int page = 1;
+  // int page = 1;
+  fetchData(String s) {
+    if (s == "end") {
+      Provider.of<GalleryProvider>(context, listen: false).page =
+          Provider.of<GalleryProvider>(context, listen: false).page + 1;
+    } else {
+      Provider.of<GalleryProvider>(context, listen: false)
+          .getServerData(searchQuery);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(() {
+    /* _scrollController.addListener(() {
       if (_scrollController.position.pixels ==
           _scrollController.position.maxScrollExtent) {
         // Bottom poistion
@@ -34,7 +44,18 @@ class _GalleryPhotosState extends State<GalleryPhotos> {
         //     .getServerData(searchQuery, page);
         // photoProvider.getServerData(searchQuery, page);
       }
-    });
+    });*/
+    // WidgetsBinding.instance!.addPostFrameCallback((_) {
+    //   fetchData();
+    // });
+    _scrollController.addListener(_scrollListener);
+  }
+
+  void _scrollListener() {
+    if (_scrollController.position.pixels ==
+        _scrollController.position.maxScrollExtent) {
+      fetchData("end");
+    }
   }
 
   void _clearTextField() {
@@ -149,9 +170,10 @@ class _GalleryPhotosState extends State<GalleryPhotos> {
                 ),
               ),
             ),*/
+
             Expanded(
                 child: FutureBuilder<PhotoModel>(
-              future: photoProvider.getServerData(searchQuery, page),
+              future: photoProvider.getServerData(searchQuery),
               builder: (context, snapshot) {
                 print(snapshot.data);
                 if (snapshot.data == null ||
@@ -175,6 +197,11 @@ class _GalleryPhotosState extends State<GalleryPhotos> {
                               mainAxisSpacing: 8),
                       itemCount: snapshot.data?.results?.length,
                       itemBuilder: (BuildContext ctx, index) {
+                        if (index == snapshot.data!.results!.length - 1) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
                         return InkWell(
                           onTap: () {
                             print("image click");

@@ -22,21 +22,18 @@ void main() {
   // runApp(MultiProvider(providers: [
   //   ChangeNotifierProvider<PhotoProvider>.value(value: PhotoProvider())
   // ], child: MyApp()));
-  /* runApp(MultiProvider(
+  runApp(MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => PhotoProvider())],
       child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: PhotoGridView(),
-
-      )
-  )
-  );*/
-  runApp(MultiProvider(
+        debugShowCheckedModeBanner: false,
+        home: PhotoGridView(),
+      )));
+  /* runApp(MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => GalleryProvider())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SplashScreen(),
-      )));
+      )));*/
 }
 
 /*class MyApp extends StatelessWidget {

@@ -12,7 +12,7 @@ class GalleryProvider extends ChangeNotifier {
   final TextEditingController _controller = TextEditingController();
   String searchQuery = "";
   final ScrollController _scrollController = ScrollController();
-  int page = 1;
+  int _page = 1;
   PhotoProvider() {
     _photoModel.results = list;
   }
@@ -27,27 +27,22 @@ class GalleryProvider extends ChangeNotifier {
     return _photoModel;
   }
 
-  void paginationTask() {
-    _scrollController.addListener(() {
-      if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) {
-        print("reached end");
-        page++;
-        getServerData(searchQuery, page);
-      } else {
-        print("not reached end");
-      }
-    });
+  int get page => _page;
+
+  set page(int value) {
+    _page = value;
+    notifyListeners();
   }
 
-  Future<PhotoModel> getServerData(String query, int page) async {
+  Future<PhotoModel> getServerData(String query) async {
     print("query:" + query);
     print("page" + page.toString());
     var response = await http.get(Uri.parse(
-        "https://api.unsplash.com/search/photos?query=$query&client_id=cKakzKM1cx44BUYBnEIrrgN_gnGqt81UcE7GstJEils&per_page=30&orientation=portrait&page=1"));
+        "https://api.unsplash.com/search/photos?query=$query&client_id=cKakzKM1cx44BUYBnEIrrgN_gnGqt81UcE7GstJEils&per_page=30&orientation=portrait&page=$page"));
     Map<String, dynamic> parsed = jsonDecode(response.body);
     print(parsed);
     PhotoModel photoModel = PhotoModel.fromJson(parsed);
+
     return photoModel;
   }
 }
