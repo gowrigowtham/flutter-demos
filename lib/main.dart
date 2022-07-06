@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:googlemapdemo/common/dashboard_page.dart';
 import 'package:googlemapdemo/database/room/floor/dao/note_dao.dart';
@@ -17,23 +18,28 @@ import 'package:googlemapdemo/provider/view/gallery_photos.dart';
 import 'package:googlemapdemo/screen/widgets.dart';
 import 'package:provider/provider.dart';
 
+import 'odoo/odoo_demo.dart';
+
 void main() {
+  // SystemChrome.setSystemUIOverlayStyle(
+  //     SystemUiOverlayStyle(statusBarColor: Color(0xfffa8f5d)));
   // runApp(const MyApp());
   // runApp(MultiProvider(providers: [
   //   ChangeNotifierProvider<PhotoProvider>.value(value: PhotoProvider())
   // ], child: MyApp()));
-  runApp(MultiProvider(
+  /* runApp(MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => PhotoProvider())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: PhotoGridView(),
-      )));
-  /* runApp(MultiProvider(
+      )));*/
+  runApp(MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => GalleryProvider())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SplashScreen(),
-      )));*/
+        // home: OdooDemo(),
+      )));
 }
 
 /*class MyApp extends StatelessWidget {
