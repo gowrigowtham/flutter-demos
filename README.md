@@ -1,6 +1,6 @@
-# googlemapdemo
+# Session 1 Source Code
 
-A new Flutter project.
+Demo for building and understanding of basic UI components
 
 ## Getting Started
 
