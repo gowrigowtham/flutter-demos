@@ -69,7 +69,7 @@ class InitState extends State<SignUpScreen> {
                       Icons.person,
                       color: Color(0xffF5591F),
                     ),
-                    hintText: "Full Name",
+                    hintText: "Name",
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none),
               ),
@@ -95,7 +95,7 @@ class InitState extends State<SignUpScreen> {
                       Icons.email,
                       color: Color(0xffF5591F),
                     ),
-                    hintText: "Enter Email",
+                    hintText: "Email",
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none),
               ),
@@ -121,7 +121,7 @@ class InitState extends State<SignUpScreen> {
                       Icons.phone,
                       color: Color(0xffF5591F),
                     ),
-                    hintText: "Phone Number",
+                    hintText: "Number",
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none),
               ),
@@ -148,7 +148,7 @@ class InitState extends State<SignUpScreen> {
                       Icons.vpn_key,
                       color: Color(0xffF5591F),
                     ),
-                    hintText: "Enter Password",
+                    hintText: "Password",
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none),
               ),
@@ -177,7 +177,8 @@ class InitState extends State<SignUpScreen> {
                 ),
                 child: const Text(
                   "REGISTER",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w700),
                 ),
               ),
             ),
@@ -196,13 +197,13 @@ class InitState extends State<SignUpScreen> {
                   // )
                   RichText(
                     text: TextSpan(
-                        text: "Already Member? ",
+                        text: "Already member? ",
                         style: const TextStyle(
                           color: Colors.black,
                         ),
                         children: [
                           TextSpan(
-                            text: 'Login Now',
+                            text: 'Login',
                             style: const TextStyle(color: Color(0xffF5591F)),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
